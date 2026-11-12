@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E🎧%3C/text%3E%3C/svg%3E">
+<meta name="description" content="English for Everyday Communication, Grade IX: reading, listening, speaking and writing practice.">
+<title>English for Everyday Communication: 4 Skills</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Fredoka:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F6F8;--card:#fff;--ink:#14292E;--mute:#52666B;--line:#D5E0E3;--c:#C2255C;--ok:#1E7B3A;--okbg:#E3F4E8;--no:#B3261E;--nobg:#FBE6E4;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1B1F;--card:#172A30;--ink:#E8F1F3;--mute:#9DB3B8;--line:#2B4249;--ok:#6FD08C;--okbg:#17382380;--no:#FF8A80;--nobg:#4A1D1A99}}
+:root[data-theme="dark"]{--bg:#0F1B1F;--card:#172A30;--ink:#E8F1F3;--mute:#9DB3B8;--line:#2B4249;--ok:#6FD08C;--okbg:#17382380;--no:#FF8A80;--nobg:#4A1D1A99}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Nunito,system-ui,sans-serif}
+.w{max-width:720px;margin:0 auto;padding:18px 14px 48px}
+h1,h2,h3{font-family:Fredoka,Nunito,sans-serif;font-weight:600;line-height:1.2;margin:0}
+h1{font-size:1.55rem}h2{font-size:1.2rem;margin-bottom:6px}h3{font-size:1rem}
+.sub{color:var(--mute);margin:6px 0 14px}
+.chs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:10px}
+.chs button,.sk button{border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:7px 2px;font:inherit;font-weight:800;font-size:.85rem;cursor:pointer}
+.chs small{display:block;font-weight:400;font-size:.68rem;color:var(--mute);line-height:1.2}
+.sk{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin-bottom:14px}
+.sk button{font-size:.78rem;border-radius:999px}
+[aria-selected="true"]{border-color:var(--c)!important;background:var(--c)!important;color:#fff!important}
+[aria-selected="true"] small{color:#fff!important}
+button:focus-visible,textarea:focus-visible{outline:3px solid var(--c);outline-offset:2px}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:14px}
+.hint{color:var(--mute);font-size:.9rem;margin:0 0 10px}
+.ln{margin:6px 0}.ln b{color:var(--c)}
+.blk{border-left:5px solid var(--c);background:var(--bg);border-radius:8px;padding:10px 12px;margin:10px 0}
+.key{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px;margin-top:10px}
+.key div{border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:.92rem}
+.key b{display:block;color:var(--c)}
+.btn{border:0;background:var(--c);color:#fff;border-radius:10px;padding:9px 14px;font:inherit;font-weight:800;cursor:pointer;margin:4px 6px 0 0}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--line)}
+.opt{display:block;width:100%;text-align:left;margin:6px 0;padding:10px 12px;border:2px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font:inherit;cursor:pointer}
+.opt.ok{border-color:var(--ok);background:var(--okbg)}.opt.no{border-color:var(--no);background:var(--nobg)}
+.q{border-top:1px solid var(--line);padding:12px 0}.q:first-of-type{border-top:0}.q p{margin:0 0 6px;font-weight:800}
+.why{font-size:.9rem;color:var(--mute)}.score{font-family:Fredoka,sans-serif;margin-top:8px}
+.sp{border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:8px 0}
+.sp p{margin:0 0 4px;font-weight:800}.res{font-size:.9rem;margin-top:6px;min-height:1.2em}
+textarea{width:100%;min-height:130px;border:2px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit;padding:10px}
+.chk{list-style:none;padding:0;margin:8px 0}.chk li{padding:3px 0}.chk li.on{color:var(--ok);font-weight:800}
+.note{color:var(--mute);font-size:.8rem;margin-top:16px}
+.panel{display:none}.panel.on{display:block}
+</style>
+</head>
+<body>
+<div class="w">
+<h1>English for Everyday Communication</h1>
+<p class="sub">Grade IX SMP/MTs. Each chapter trains four skills: read the text, listen to the audio, say it aloud, then write your own.</p>
+<div class="chs" id="chs" role="tablist"></div>
+<div class="sk" id="sk" role="tablist"></div>
+<p class="hint" id="st" aria-live="polite" style="min-height:1.4em;margin:0 0 6px"></p>
+<div id="main"></div>
+<p class="note">All names, products and labels are fictional. Never use the sample medicine information as real medical advice; read real labels with an adult. Audio plays recorded files when available, otherwise your device’s voice; the speaking check works best in Chrome.</p>
+</div>
+<script>
+var D=[
+{id:"ch1",t:"Hopes & wishes",c:"#C2255C",full:"Interpersonal Texts: Hopes, Wishes, and Congratulating Someone",
+read:[{h:"Text messages",lines:[["Dina","Hi Rani! I heard you won the speech contest. Congratulations on your success!"],["Rani","Thank you very much, Dina. I really appreciate it."],["Dina","You worked so hard. I hope you win the national contest next month."],["Rani","I hope so, too. I have another test tomorrow."],["Dina","I wish you good luck!"]]}],
+key:[["Congratulating","Congratulations on your success! / Well done!"],["Hoping (real chance)","I hope you pass the exam."],["Wishing (goodwill)","I wish you good luck. / May you always be successful."]],
+listen:{script:"Hi Budi, this is Aunt Sari. Congratulations on passing your exam! I’m so happy for you. I hope you enjoy your holiday next week. I wish you all the best in senior high school.",qs:[["Why does Aunt Sari call Budi?",["To say congratulations","To ask for help","To say goodbye"],0],["What does she hope?",["He wins a contest","He enjoys his holiday","He buys a book"],1]]},
+speak:["Congratulations on your success!","I hope you pass the exam.","I wish you good luck."],
+write:{task:"Write a short card (3–5 sentences) to a friend who just won a contest.",checks:[["Congratulations on …",/congratulations on/i],["I hope …",/\bi hope\b/i],["I wish …",/\bi wish\b/i]]},
+quiz:[["Your friend has an examination tomorrow.",["Congratulations on the exam.","I hope you pass the exam.","I hope you passed the exam."],1,"The exam has not happened yet, so use the base form."],["Someone congratulates you. Best reply?",["Thank you very much. I really appreciate it.","You are wrong.","Good luck!"],0,"Responding politely completes the interaction."],["Which sentence is an imagined, unlikely situation?",["I hope I can visit Bali next year.","I wish you good health.","I wish I could fly."],2,"I wish + past form describes something not real now."],["Choose the correct spelling.",["Congratulation on your success!","Congratulations on your success!","Congratulations of your success!"],1,"Congratulations ends with s and is followed by on."],["Which line fits a graduation card?",["May you achieves your dreams.","May you achieve your dreams.","I wish I could fly."],1,"May + subject + base verb."],["Your friend wins a singing contest. What do you say?",["Congratulations on winning!","I hope you passed.","See you next year."],0,"Congratulations on + noun / verb-ing names the achievement."]]},
+{id:"ch2",t:"Plans & opinions",c:"#1C6DD0",full:"Transactional Texts: Expressing Purpose, Intention, and Agreement or Disagreement",
+read:[{h:"After school",lines:[["Teacher","What are you going to do after school, Aldi?"],["Aldi","I’m going to join the English club. I would like to improve my speaking."],["Teacher","Good idea. Many students join in order to practise with friends."],["Aldi","I think the club should meet twice a week."],["Mia","You have a point, but I’m afraid we are too busy. I think once a week is enough."]]}],
+key:[["Intention","I am going to … / I would like to …"],["Purpose","to / in order to + verb; so that + clause"],["Agree / disagree","I totally agree. / You have a point, but … / I’m afraid I don’t agree because …"]],
+listen:{script:"Good morning, students. I’m going to open the library early on Friday so that you can borrow books for the holiday. I would like everyone to return their books by Thursday.",qs:[["Why will the library open early?",["So students can borrow books","So students can study","So teachers can rest"],0],["What does the speaker want students to do?",["Buy books","Return books by Thursday","Come on Saturday"],1]]},
+speak:["I am going to visit my grandmother.","I study hard in order to pass the test.","You have a point, but I’m afraid I don’t agree."],
+write:{task:"Write 4–5 sentences: your plan for the weekend, why you will do it, and one opinion with a polite disagreement.",checks:[["going to / would like to",/going to|would like to/i],["purpose: in order to / so that",/in order to|so that/i],["agree / disagree expression",/agree|you have a point|i see your point/i]]},
+quiz:[["She is going to ___ her aunt.",["visit","visits","visiting"],0,"After going to, use the base form."],["I speak slowly ___ everyone can understand.",["to","in order to","so that"],2,"A full clause follows, so use so that."],["Which is a polite disagreement?",["No, you are wrong.","I see your point, but I think the budget is too small.","That’s right."],1,"Soften with I see your point, but … and give a reason."],["Choose the correct sentence.",["I would like join the club.","I would likes to join the club.","I would like to join the club."],2,"would like to + base verb."],["She saves money ___ buy a dictionary.",["in order to","so that","because"],0,"in order to + base verb expresses purpose."],["Which expression shows partial agreement?",["I totally agree.","You have a point, but we need more time.","Exactly!"],1,"You have a point, but … agrees a little and adds a different view."]]},
+{id:"ch3",t:"Labels",c:"#2B8A3E",full:"Labels: Information on Medicines, Food, and Beverages",
+read:[{h:"Medicine label",lines:[["Name","FEVERGO Syrup"],["Content","Paracetamol 120 mg/5 mL. 60 mL."],["Dosage","Children 6–12 years: 10 mL, 3 times a day. Do not exceed 4 doses in 24 hours."],["Storage","Store below 30°C, away from sunlight."],["Warning","Keep out of reach of children. Consult a doctor if the fever lasts more than 3 days."],["Expiry date","08/2028"]]},{h:"Food label",lines:[["Name","CRUNCHY CRACKERS"],["Net weight","150 g"],["Ingredients","Wheat flour, palm oil, sugar, salt."],["Contains","Wheat, milk. May contain traces of nuts."],["Use","Close the package tightly after opening."],["Best before","12 Mar 2027. Made by Happy Snacks Ltd."]]},{h:"Beverage label",lines:[["Name","SUNNY ORANGE JUICE"],["Net volume","250 mL"],["Use","Shake well before drinking."],["Storage","Store in a cool, dry place."]]}],
+key:[["Expiry date","Do not use after this date."],["Best before","Quality is best until this date."],["Net weight / volume","Amount of the product only."]],
+listen:{script:"Please listen carefully. Take ten millilitres of this syrup three times a day. Do not take more than four doses in twenty-four hours. Keep it away from sunlight and out of reach of children. If the fever lasts more than three days, see a doctor.",qs:[["How many times a day?",["Once","Three times","Six times"],1],["What should you do if the fever lasts more than three days?",["Take more syrup","See a doctor","Keep waiting"],1]]},
+speak:["Keep out of reach of children.","Store in a cool, dry place.","Shake well before drinking."],
+write:{task:"Create a label for your own fictional snack or drink (4–6 lines). Include name, content, use, storage and date or maker.",checks:[["Content (net weight / volume)",/net (weight|volume)|content|\bml\b|\d ?g\b/i],["Use (an instruction)",/shake|open|eat|drink|serve|use/i],["Storage",/store|keep/i],["Best before / expiry / made by",/best before|expiry|made by/i]]},
+quiz:[["Label: “Expiry date: 08/2028.” You must not use the medicine…",["after August 2028","before August 2028","only in August 2028"],0,"Expiry date is the last safe date to use it."],["Label: “Contains: wheat, milk.” Who should NOT eat this?",["Someone allergic to milk","Someone allergic to rice","Someone allergic to eggs"],0,"The Contains line lists allergens."],["Label: “Shake well before drinking.” Which block is this?",["Use","Content","Storage"],0,"Directions are written as imperatives."],["Label: “Do not exceed 4 doses in 24 hours.” What is the maximum?",["3 doses","4 doses","24 doses"],1,"Exceed means go over the limit."],["Medicine label: “Children 6–12 years: 10 mL, 3 times a day.” How much should an 8-year-old take each time?",["5 mL","10 mL","60 mL"],1,"The Dosage line gives 10 mL for ages 6–12."],["Medicine label: “Consult a doctor if the fever lasts more than 3 days.” When should you see a doctor?",["When the syrup tastes sweet","When the fever lasts more than 3 days","When the bottle is empty"],1,"The Warning block tells you when to get help."],["Medicine label: “Store below 30°C, away from sunlight.” Where should you keep it?",["In direct sunlight","Away from sunlight, below 30°C","In a hot car"],1,"The Storage block gives the condition."],["Food label: “Best before: 12 Mar 2027.” This means the food…",["has the best quality until that date","must be eaten on that date only","was made on that date"],0,"Best before refers to quality."],["Food label: “Net weight 150 g.” What does it tell you?",["The weight of the food without the package","The price","The number of crackers"],0,"Net weight is the product itself."],["Food label: “Close the package tightly after opening.” What should you do after opening it?",["Throw it away","Close it tightly","Put it in the sun"],1,"This is an imperative instruction in the Use block."],["Which information is usually on a medicine label but NOT on a juice label?",["Net volume","Dosage","Made by"],1,"Medicine labels include dosage instructions."]]},
+{id:"ch4",t:"Procedures",c:"#B45F06",full:"Procedure Texts: Recipes and Instruction Manuals",
+read:[{h:"Recipe: Simple Fruit Salad",lines:[["Goal","Make a fruit salad."],["Materials","1 banana, 1 apple, yogurt, a bowl."],["Steps","First, wash the fruit thoroughly. Next, cut the banana and the apple into small pieces. Then, put all the pieces in a bowl. After that, add a little yogurt. Mix gently. Finally, serve the fruit salad cold."]]},{h:"Manual: Blender",lines:[["Step 1","Put the fruit in the jar."],["Step 2","Close the lid and press the green button."],["Warning","Do not open the lid while the blender is running. Never touch the plug with wet hands."]]}],
+key:[["Imperative","Wash the fruit. (no subject)"],["Connectors","First, Next, Then, After that, Finally"],["Warning","Never … / Do not …"]],
+listen:{script:"Here is how to make tea. First, boil the water. Next, put a tea bag in a cup. Then, pour the hot water into the cup. After that, wait for three minutes. Finally, take out the tea bag and add some sugar.",qs:[["What is the first step?",["Add sugar","Boil the water","Wait three minutes"],1],["How long do you wait?",["One minute","Three minutes","Ten minutes"],1]]},
+speak:["First, wash the fruit thoroughly.","Mix gently.","Never touch the plug with wet hands."],
+write:{task:"Write the steps to make your favourite drink or instant noodles (4–6 sentences). Add one warning.",checks:[["First, …",/\bfirst\b/i],["Next / Then / After that",/next|then|after that/i],["Finally, …",/finally/i],["A warning (Never / Do not / Be careful)",/never|do not|don’t|don't|be careful/i]]},
+quiz:[["Which sentence is an imperative?",["She is making a cake.","Wash the vegetables carefully.","They were at school."],1,"Imperatives start with a base verb and have no subject."],["Which is correct in a recipe?",["You first wash the fruit.","First, wash the fruit.","First, you washed the fruit."],1,"Use a connector + imperative."],["“Never touch electrical equipment with wet hands.” This is a…",["Goal","Step","Warning"],2,"Warnings give safety information."],["Which connector usually shows the LAST step?",["First","Then","Finally"],2,"Finally introduces the last step."],["What is the purpose of a procedure text?",["To tell a funny story","To explain how to do or make something step by step","To describe a person"],1,"Recipes and manuals explain how to do or make something."],["“2 eggs, 100 g flour, 1 cup of milk.” Which part of a recipe is this?",["Ingredients (materials)","Steps","Warning"],0,"Materials list what you need."],["Manual: “Press the green button to turn on the blender.” Which word is the imperative verb?",["green","Press","blender"],1,"Press is the base verb that starts the instruction."],["Manual: “Do not open the lid while the blender is running.” This is a…",["Warning","Goal","Ingredient"],0,"Do not + verb is a common warning."],["Plug in the kettle. ___, fill it with water.",["Finally","Next","Before"],1,"Next shows the following step."],["Stir the soup ___ so that it does not burn.",["gentle","gently","gentleness"],1,"An adverb tells how to do the action."],["Put the steps in order. A. Mix gently. B. First, wash the fruit thoroughly. C. Finally, serve the fruit salad cold. D. Then, put all the pieces in a bowl.",["B – D – A – C","D – B – C – A","A – B – D – C","B – A – D – C"],0,"Wash first, put in a bowl, mix gently, finally serve."]]}
+];
+var SK=[["read","Reading"],["listen","Listening"],["speak","Speaking"],["write","Writing"],["quiz","Quiz"]];
+var $=function(s){return document.querySelector(s)};
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e}
+var TTS="speechSynthesis"in window,AU=null,HAS={},VO=null;
+function msg(t){var e=$("#st");if(e)e.textContent=t||""}
+function pickVoice(){if(!TTS)return;var v=speechSynthesis.getVoices();VO=v.filter(function(x){return/^en[-_]US/i.test(x.lang)})[0]||v.filter(function(x){return/^en/i.test(x.lang)})[0]||null}
+if(TTS){pickVoice();speechSynthesis.onvoiceschanged=pickVoice}
+function say(t,r){if(!TTS){msg("This browser cannot play audio. Try Chrome or Safari.");return}
+ if(speechSynthesis.speaking||speechSynthesis.pending)speechSynthesis.cancel();
+ var parts=t.match(/[^.!?]+[.!?]*/g)||[t];
+ parts.forEach(function(s,i){var u=new SpeechSynthesisUtterance(s.trim());u.lang="en-US";if(VO)u.voice=VO;u.rate=r||.9;
+  if(i===0)u.onstart=function(){msg("Playing…")};
+  if(i===parts.length-1)u.onend=function(){msg("")};
+  u.onerror=function(e){if(e.error!=="canceled"&&e.error!=="interrupted")msg("Audio was blocked. Tap Play again and check your volume.")};
+  speechSynthesis.speak(u)});
+ speechSynthesis.resume()}
+function probe(){D.forEach(function(c){var ks=[c.id+"-listen"];c.read.forEach(function(b,i){ks.push(c.id+"-read-"+i)});c.speak.forEach(function(t,i){ks.push(c.id+"-speak-"+(i+1))});
+ ks.forEach(function(k){try{fetch("audio/"+k+".mp3",{method:"HEAD"}).then(function(r){HAS[k]=r.ok&&/audio|mpeg|octet/.test(r.headers.get("content-type")||"")}).catch(function(){})}catch(e){}})})}
+function stopAll(){if(TTS)speechSynthesis.cancel();if(AU){AU.pause();AU=null}msg("")}
+function play(k,t,r){stopAll();
+ if(HAS[k]){var a=new Audio("audio/"+k+".mp3");a.playbackRate=(r&&r<.8)?.75:1;AU=a;a.onerror=function(){HAS[k]=false;say(t,r)};var p=a.play();if(p&&p.catch)p.catch(function(){HAS[k]=false;say(t,r)})}
+ else say(t,r)}
+
+
+function mc(box,data,tag){
+ var n=0,g=0,sc=el("div","score");
+ data.forEach(function(d){var q=el("div","q","<p>"+d[0]+"</p>"),a=false,w=el("div","why");
+  d[1].forEach(function(o,i){var b=el("button","opt",o);b.onclick=function(){if(a)return;a=true;n++;
+   q.querySelectorAll(".opt")[d[2]].classList.add("ok");
+   if(i===d[2]){g++;w.textContent="Correct! "+(d[3]||"")}else{b.classList.add("no");w.textContent="Not quite. "+(d[3]||"")}
+   sc.textContent=n===data.length?"Score: "+g+" / "+data.length:"Answered "+n+" of "+data.length};q.appendChild(b)});
+  q.appendChild(w);box.appendChild(q)});
+ box.appendChild(sc);var r=el("button","btn alt","Try again");r.onclick=function(){box.innerHTML="";mc(box,data)};box.appendChild(r)}
+var V={
+read:function(c,m){
+ c.read.forEach(function(b,bi){var s=el("section","","<h2>"+b.h+"</h2>");
+  var blk=el("div","blk");b.lines.forEach(function(l){blk.appendChild(el("div","ln","<b>"+l[0]+":</b> "+l[1]))});s.appendChild(blk);
+  var p=el("button","btn alt","Hear this text");p.onclick=function(){play(c.id+"-read-"+bi,b.lines.map(function(l){return l[1]}).join(" "),.9)};s.appendChild(p);m.appendChild(s)});
+ var k=el("section","","<h2>Key expressions</h2>"),kk=el("div","key");
+ c.key.forEach(function(x){kk.appendChild(el("div","","<b>"+x[0]+"</b>"+x[1]))});k.appendChild(kk);m.appendChild(k)},
+listen:function(c,m){
+ var s=el("section","","<h2>Listen and answer</h2><p class='hint'>Play the audio first. Read the transcript only after you answer.</p>");
+ [["Play audio",.9],["Play slowly",.65]].forEach(function(x){var b=el("button","btn",x[0]);b.onclick=function(){play(c.id+"-listen",c.listen.script,x[1])};s.appendChild(b)});
+ var st=el("button","btn alt","Stop");st.onclick=stopAll;s.appendChild(st);
+ var qb=el("div");s.appendChild(qb);mc(qb,c.listen.qs);
+ var tr=el("button","btn alt","Show transcript"),t=el("p","hint",c.listen.script);t.hidden=true;tr.onclick=function(){t.hidden=!t.hidden};
+ s.append(tr,t);m.appendChild(s)},
+speak:function(c,m){
+ var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+ var s=el("section","","<h2>Listen, then say it</h2><p class='hint'>"+(SR?"Tap Listen, then Speak and say the sentence. You get a match score.":"Tap Listen, say the sentence aloud, then tick Done. (Speech check is not available on this browser.)")+"</p>");
+ c.speak.forEach(function(t,ti){var d=el("div","sp","<p>"+t+"</p>"),r=el("div","res");
+  var l=el("button","btn alt","Listen");l.onclick=function(){play(c.id+"-speak-"+(ti+1),t,.85)};d.appendChild(l);
+  var b=el("button","btn",SR?"Speak":"Done");
+  b.onclick=function(){if(!SR){r.textContent="Great! Say it once more with clear stress.";return}
+   var rc=new SR();rc.lang="en-US";r.textContent="Listening…";
+   rc.onresult=function(e){var h=e.results[0][0].transcript.toLowerCase().replace(/[^a-z' ]/g,"").split(/\s+/),w=t.toLowerCase().replace(/[^a-z’' ]/g,"").replace(/’/g,"'").split(/\s+/),k=0;
+    w.forEach(function(x){if(h.indexOf(x)>-1)k++});var p=Math.round(100*k/w.length);
+    r.textContent="Heard: “"+e.results[0][0].transcript+"” — match "+p+"%"+(p>=80?". Excellent!":". Listen again and try once more.")};
+   rc.onerror=function(){r.textContent="Could not hear you. Allow the microphone and try again."};try{rc.start()}catch(x){}};
+  d.append(b,r);s.appendChild(d)});m.appendChild(s)},
+write:function(c,m){
+ var s=el("section","","<h2>Write</h2><p>"+c.write.task+"</p>"),ta=el("textarea");ta.placeholder="Type your text here…";
+ var ul=el("ul","chk"),cnt=el("div","hint","0 words");
+ var li=c.write.checks.map(function(x){var e=el("li","","○ "+x[0]);ul.appendChild(e);return e});
+ ta.oninput=function(){var v=ta.value;cnt.textContent=(v.trim()?v.trim().split(/\s+/).length:0)+" words";
+  c.write.checks.forEach(function(x,i){var ok=x[1].test(v);li[i].className=ok?"on":"";li[i].textContent=(ok?"✓ ":"○ ")+x[0]})};
+ var hr=el("button","btn","Read my text aloud");hr.onclick=function(){if(ta.value.trim())say(ta.value,.9)};
+ s.append(el("p","hint","Use these in your text:"),ul,ta,cnt,hr);m.appendChild(s)},
+quiz:function(c,m){var s=el("section","","<h2>Quick quiz</h2>"),b=el("div");s.appendChild(b);mc(b,c.quiz);m.appendChild(s)}};
+var cur="ch1",sk="read";
+function go(){
+ if(TTS)speechSynthesis.cancel();
+ stopAll();var c=D.filter(function(x){return x.id===cur})[0],m=$("#main");m.innerHTML="";
+ document.documentElement.style.setProperty("--c",c.c);
+ m.appendChild(el("p","sub","<b>"+c.full+"</b>"));
+ V[sk](c,m);
+ [].forEach.call($("#chs").children,function(b){b.setAttribute("aria-selected",b.dataset.k===cur)});
+ [].forEach.call($("#sk").children,function(b){b.setAttribute("aria-selected",b.dataset.k===sk)})}
+function route(){var h=(location.hash||"").slice(1).split("-");
+ if(D.some(function(x){return x.id===h[0]}))cur=h[0];if(SK.some(function(x){return x[0]===h[1]}))sk=h[1];go()}
+function set(){try{location.hash=cur+"-"+sk}catch(e){}go()}
+D.forEach(function(c,i){var b=el("button","","Ch. "+(i+1)+"<small>"+c.t+"</small>");b.dataset.k=c.id;b.setAttribute("role","tab");b.onclick=function(){cur=c.id;set()};$("#chs").appendChild(b)});
+SK.forEach(function(s){var b=el("button","",s[1]);b.dataset.k=s[0];b.setAttribute("role","tab");b.onclick=function(){sk=s[0];set()};$("#sk").appendChild(b)});
+probe();window.addEventListener("hashchange",route);route();
+</script>
+</body>
+</html>
